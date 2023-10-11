@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 public class JsonConverter {
 
     private static final ObjectMapper converter = new ObjectMapper();
+    private static final String exception = "Couldn't convert to Json";
 
-    public static String toJson(Object log) throws JsonProcessingException {
-        return converter/*.writerWithDefaultPrettyPrinter()*/.writeValueAsString(log);
+    public static String toJson(Object log) {
+        try {
+            return converter/*.writerWithDefaultPrettyPrinter()*/.writeValueAsString(log);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return exception;
+        }
     }
 }
