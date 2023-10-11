@@ -13,6 +13,7 @@ import java.util.Arrays;
 @Service
 public class Publisher {
 
+
     @Scheduled(fixedRate = 1000)
     private void test() {
         try {
