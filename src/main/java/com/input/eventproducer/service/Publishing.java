@@ -26,7 +26,7 @@ public class Publishing {
     private boolean timeToPersist = false;
 
     /**
-     * Запускает процесса генерации событий
+     * Запускает процесс генерации событий
      */
     public void eventStreamingStarter() {
         while (true) {
